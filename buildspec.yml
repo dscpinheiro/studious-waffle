@@ -1,0 +1,12 @@
+version: 0.2
+
+phases:
+  build:
+    commands:
+      - dotnet build
+      - dotnet test --logger trx
+reports:
+  dotnet-test-reports:
+    files:
+      - "PrimeService.Tests/TestResults/*.trx"
+    file-format: "VISUALSTUDIOTRX"
